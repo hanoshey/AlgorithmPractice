@@ -6,7 +6,7 @@ object PrimeNumber2 {
         var counter = 0
         var ptr = 0
         val prime = IntArray(500)
-        prime[ptr++] = 2;//2는 소수이다.
+        prime[ptr++] = 2//2는 소수이다.
         var n = 3
         while (n <= 1000) {
             var i = 1
