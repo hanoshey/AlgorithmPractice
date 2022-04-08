@@ -1,7 +1,6 @@
 package chap02.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 // 배열 요솟값을 읽어 들여 역순으로 정렬
 internal object ReverseArrayEx_02_02 {
@@ -22,7 +21,7 @@ internal object ReverseArrayEx_02_02 {
     fun reverse(a: IntArray) {
         print(a)
         for (i in 0 until a.size / 2) {
-            println("a[" + i + "]와 a[" + (a.size - i - 1) + "]를 교환합니다.")
+            println("a[$i]와 a[${(a.size - i - 1)}]를 교환합니다.")
             swap(a, i, a.size - i - 1)
             print(a)
         }
@@ -30,13 +29,12 @@ internal object ReverseArrayEx_02_02 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         print("요솟수는 ：")
-        val num = stdIn.nextInt() // 요솟수
+        val num = readLine()!!.toInt() // 요솟수
         val x = IntArray(num) // 요솟수 num인 배열
         for (i in 0 until num) {
             print("x[$i] : ")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         reverse(x) // 배열 a의 요소를 역순으로 정렬
         println("역순 정렬을 마쳤습니다.")

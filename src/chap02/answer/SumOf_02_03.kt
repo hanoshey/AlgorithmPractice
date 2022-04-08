@@ -13,14 +13,13 @@ internal object SumOf_02_03 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         print("요솟수는：")
-        val num = stdIn.nextInt() // 요솟수
+        val num = readLine()!!.toInt() // 요솟수
         val a = IntArray(num) // 길이가 num인 배열
         for (i in 0 until num) {
             print("a[$i] : ")
-            a[i] = stdIn.nextInt()
+            a[i] = readLine()!!.toInt()
         }
-        println("전 요소의 합계는 " + sumOf(a) + "입니다.")
+        println("전 요소의 합계는 ${sumOf(a)}입니다.")
     }
 }

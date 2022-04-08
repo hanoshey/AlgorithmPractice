@@ -18,12 +18,12 @@ internal object MaxOfArrayRand2_02_01 {
         println("키의 최댓값을 구합니다.")
         val num = 1 + rand.nextInt(20) // 사람 수를 1~20의 난수로 생성하는
         val height = IntArray(num) // 요솟수 num인 배열을 생성
-        println("사람수는 " + num + "명입니다.")
+        println("사람수는 ${num}명입니다.")
         println("키는 아래처럼 됩니다.")
         for (i in 0 until num) {
             height[i] = 100 + rand.nextInt(90) // 요솟값을 난수로 결정
             println("height[" + i + "]：" + height[i])
         }
-        println("최댓값은 " + maxOf(height) + "입니다.")
+        println("최댓값은 ${maxOf(height)}입니다.")
     }
 }

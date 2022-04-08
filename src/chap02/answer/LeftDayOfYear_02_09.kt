@@ -1,11 +1,9 @@
 package chap02.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 // 연내의 남은 일 수를 구합니다.
 internal object LeftDayOfYear_02_09 {
-    // 각 달의 일 수
     var mdays = arrayOf(
         intArrayOf(31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31),
         intArrayOf(31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31)
@@ -26,19 +24,18 @@ internal object LeftDayOfYear_02_09 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         var retry: Int // 한 번 더？
         println("연내의 남은 일 수를 구합니다.")
         do {
             print("년：")
-            val year = stdIn.nextInt() // 년
+            val year = readLine()!!.toInt() // 년
             print("월：")
-            val month = stdIn.nextInt() // 월
+            val month = readLine()!!.toInt() // 월
             print("일：")
-            val day = stdIn.nextInt() // 일
-            System.out.printf("연내의 남은 일 수는 %d일입니다.\n", leftDayOfYear(year, month, day))
+            val day = readLine()!!.toInt() // 일
+            print("연내의 남은 일 수는 %d일입니다.\n".format(leftDayOfYear(year, month, day)))
             print("한번 더 할까요? (1.예/0.아니오)：")
-            retry = stdIn.nextInt()
+            retry = readLine()!!.toInt()
         } while (retry == 1)
     }
 }

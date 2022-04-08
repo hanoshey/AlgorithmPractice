@@ -13,23 +13,22 @@ internal object Rcopy_02_05 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         print("a의 요솟수는 ：")
-        val numa = stdIn.nextInt() // 요솟수
+        val numa = readLine()!!.toInt() // 요솟수
         val a = IntArray(numa) // 요솟수 numa인 배열
         for (i in 0 until numa) {
             print("a[$i] : ")
-            a[i] = stdIn.nextInt()
+            a[i] = readLine()!!.toInt()
         }
         print("b의 요솟수는 ：")
-        val numb = stdIn.nextInt() // 요솟수
+        val numb = readLine()!!.toInt() // 요솟수
         val b = IntArray(numb) // 요솟수 numb인 배열
         for (i in 0 until numb) {
             print("b[$i] : ")
-            b[i] = stdIn.nextInt()
+            b[i] = readLine()!!.toInt()
         }
         rcopy(a, b) // 배열 b의 모든 요소를 배열 a에 역순으로 copy
         println("배열 b의 모든 요소를 배열 a에 역순으로 복사했습니다.")
-        for (i in 0 until numa) println("a[" + i + "] = " + a[i])
+        for (i in 0 until numa) println("a[$i] =  ${a[i]}")
     }
 }

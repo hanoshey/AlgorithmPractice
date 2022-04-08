@@ -1,7 +1,6 @@
 package chap02.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 // 입력 받은 10진수를 2진수 ~36진수로 기수변환하여 나타냄(윗자리부터 배열에 저장)
 internal object CardConv_02_06 {
@@ -24,7 +23,6 @@ internal object CardConv_02_06 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         var no: Int // 변환하는 정수
         var cd: Int // 기수
         var dno: Int // 변환 뒤의 자릿수
@@ -34,19 +32,19 @@ internal object CardConv_02_06 {
         do {
             do {
                 print("변환하는 음이 아닌 정수：")
-                no = stdIn.nextInt()
+                no = readLine()!!.toInt()
             } while (no < 0)
             do {
                 print("어떤 진수로 변환할까요? (2~36)：")
-                cd = stdIn.nextInt()
+                cd = readLine()!!.toInt()
             } while (cd < 2 || cd > 36)
             dno = cardConv(no, cd, cno) // no를 cd진수로 변환
-            print(cd.toString() + "진수로는 ")
+            print("${cd}진수로는 ")
             for (i in 0 until dno)  // 윗자리부터 차례로 나타냄
                 print(cno[i])
             println("입니다.")
             print("한번 더 할까요? (1.예/0.아니오)：")
-            retry = stdIn.nextInt()
+            retry = readLine()!!.toInt()
         } while (retry == 1)
     }
 }

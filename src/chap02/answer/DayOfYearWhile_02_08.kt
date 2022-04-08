@@ -1,7 +1,6 @@
 package chap02.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 // 연내의 경과 일 수를 구합니다(while문을 사용).
 internal object DayOfYearWhile_02_08 {
@@ -26,19 +25,18 @@ internal object DayOfYearWhile_02_08 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         var retry: Int // 한 번더 ?
         println("연내의 경과 일 수를 구합니다.")
         do {
             print("년：")
-            val year = stdIn.nextInt() // 년
+            val year = readLine()!!.toInt() // 년
             print("월：")
-            val month = stdIn.nextInt() // 월
+            val month = readLine()!!.toInt() // 월
             print("일：")
-            val day = stdIn.nextInt() // 일
-            System.out.printf("연내 %d일째입니다.\n", dayOfYear(year, month, day))
+            val day = readLine()!!.toInt() // 일
+            print("연내 %d일째입니다.\n".format(dayOfYear(year, month, day)))
             print("한번 더 할까요? (1.예/0.아니오)：")
-            retry = stdIn.nextInt()
+            retry = readLine()!!.toInt()
         } while (retry == 1)
     }
 }
