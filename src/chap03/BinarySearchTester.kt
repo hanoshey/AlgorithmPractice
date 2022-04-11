@@ -3,7 +3,7 @@ package chap03
 import java.util.*
 import kotlin.jvm.JvmStatic
 
-internal object BinarySearchScanner {
+internal object BinarySearchTester {
     @JvmStatic
     fun main(args: Array<String>) {
         print("요솟수 : ")

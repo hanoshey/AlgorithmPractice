@@ -5,8 +5,7 @@ internal object Q3 {
         var howMany = 0
         for (i in 0 until n) {
             if (a[i] == key) {
-                idx[howMany] = i
-                howMany++
+                idx[howMany++] = i
             }
         }
         return howMany
