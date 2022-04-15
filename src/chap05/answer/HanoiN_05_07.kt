@@ -20,7 +20,7 @@ internal object HanoiN_05_07 {
                 ystk[ptr] = y // y의 값을 푸시
                 sstk[ptr] = sw // sw의 값을 푸시
                 ptr++
-                no = no - 1
+                no -= 1
                 y = 6 - x - y
                 continue
             }
@@ -30,7 +30,7 @@ internal object HanoiN_05_07 {
                 ystk[ptr] = y // y의 값을 푸시
                 sstk[ptr] = sw // sw의 값을 푸시
                 ptr++
-                no = no - 1
+                no -= 1
                 x = 6 - x - y
                 if (++sw == 2) sw = 0
                 continue
