@@ -26,7 +26,7 @@ internal object BubbleSort3 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println("버블정렬(버전1)")
+        println("버블정렬(버전3)")
         print("요소수 : ")
         val nx = readLine()!!.toInt()
         val x = IntArray(nx)
