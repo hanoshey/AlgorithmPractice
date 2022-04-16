@@ -1,6 +1,6 @@
 package chap06
 
-internal object shellSort {
+internal object ShellSort {
     fun shellSort(a: IntArray, n: Int) {
         var h = n / 2
         while (h > 0) {
