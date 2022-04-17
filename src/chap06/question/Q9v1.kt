@@ -1,8 +1,9 @@
 package chap06
 
-internal object ShellSort {
+internal object Q9v1 {
     fun shellSort(a: IntArray, n: Int) {
         var h = n / 2
+        var count=0
         while (h > 0) {
             for (i in h until n) {
                 val tmp = a[i]
@@ -10,12 +11,14 @@ internal object ShellSort {
                 while (j >= 0 && a[j] > tmp) {
                     a[j + h] = a[j]
                     j -= h
+                    count++
                 }
                 a[j + h] = tmp
                 println("h: $h, i: $i, j:$j, h+j:${h+j}")
             }
             h /= 2
         }
+        println("이동 횟수는 $count 입니다.")
     }
 
     @JvmStatic
