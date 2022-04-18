@@ -4,6 +4,7 @@ internal object MergeSort {
     var buff: IntArray? = null
     fun __mergeSort(a: IntArray, left: Int, right: Int) {
         if (left < right) {
+            println("left:$left, right:$right")
             val center = (left + right) / 2
             var p = 0
             var j = 0
@@ -11,10 +12,11 @@ internal object MergeSort {
             __mergeSort(a, left, center)//앞부분 병합정렬
             __mergeSort(a, center + 1, right)//뒷부분 병합정렬
             var i = left
-            while (i <= center) {
-                buff!![p++] = a[i]
-                i++
-            }
+            while (i <= center)
+                buff!![p++] = a[i++]
+            buff!!.forEach { print("$it ") }
+            println()
+            print("p: $p\n")
             while (i <= right && j < p)
                 a[k++] = if (buff!![j] <= a[i]) buff!![j++] else a[i++]
             while (j < p)
