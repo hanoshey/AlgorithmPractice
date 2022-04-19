@@ -37,21 +37,20 @@ internal object FsortEx_06_18 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("도수정렬 ")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             do {
                 print("x[$i]：")
-                x[i] = stdIn.nextInt()
+                x[i] = readLine()!!.toInt()
             } while (x[i] < 0)
         }
         var max = x[0]
         for (i in 1 until nx) if (x[i] > max) max = x[i]
         fSort(x, nx, max) // 배열 x를 도수정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 0 until nx) println("x[" + i + "]＝" + x[i])
+        for (i in 0 until nx) println("x[$i]＝${x[i]}")
     }
 }

@@ -19,7 +19,7 @@ internal object PhyscExamSortV_06_16 {
         println("■ 신체검사 리스트 ■")
         println(" 이름       키        시력")
         println("---------------")
-        for (i in x.indices) System.out.printf("%-8s%3d%5.1f\n", x[i].name, x[i].height, x[i].vision)
+        for (i in x.indices) print("%-8s%3d%5.1f\n".format(x[i].name, x[i].height, x[i].vision))
     }
 
     // 신체검사 데이터

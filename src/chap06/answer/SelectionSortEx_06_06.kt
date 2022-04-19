@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 internal object SelectionSortEx_06_06 {
     // 배열의 요소 a[idx1]과 a[idx2]를 교환
@@ -26,14 +25,13 @@ internal object SelectionSortEx_06_06 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("단순선택정렬")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         selectionSort(x, nx) // 배열 x를 단순선택정렬
     }

@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 internal object InsertionSortCen_06_07 {
     // 단순삽입정렬(보초법：배열의 머리요소는 비어있습니다.)
@@ -20,17 +19,16 @@ internal object InsertionSortCen_06_07 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("단순삽입정렬 ")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx + 1) // 1개 여분으로 생성
         for (i in 1..nx) { // x[1]~x[nx]에 읽어 들임
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         insertionSort(x, nx + 1) // 배열 x를 단순삽입정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 1..nx) println("x[" + i + "]＝" + x[i])
+        for (i in 1..nx) println("x[$i]＝${x[i]}")
     }
 }

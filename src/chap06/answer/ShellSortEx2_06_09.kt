@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 // 셸정렬(버전2：h = …, 40, 13, 4, 1：요소의 옮김 횟수를 카운트)
 internal object ShellSortEx2_06_09 {
@@ -15,9 +14,8 @@ internal object ShellSortEx2_06_09 {
         }
         while (h > 0) {
             for (i in h until n) {
-                var j: Int
                 val tmp = a[i]
-                j = i - h
+                var j = i - h
                 while (j >= 0 && a[j] > tmp) {
                     a[j + h] = a[j]
                     count++
@@ -33,18 +31,17 @@ internal object ShellSortEx2_06_09 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("셸정렬(버전 2) ")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         val count = shellSort(x, nx) // 배열 x를 셸정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 0 until nx) println("x[" + i + "]＝" + x[i])
-        println("요소의 옮김횟수는 " + count + "회입니다.")
+        for (i in 0 until nx) println("x[$i]＝${x[i]}")
+        println("요소의 옮김횟수는 ${count}회입니다.")
     }
 }

@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 internal object QuickSortVerbose_06_11 {
     // 배열의 요소 a[idx1]과 a[idx2]를 교환
@@ -59,17 +58,16 @@ internal object QuickSortVerbose_06_11 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("퀵정렬 ")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         quickSort(x, 0, nx - 1) // 배열 x를 퀵정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 0 until nx) println("x[" + i + "] = " + x[i])
+        for (i in 0 until nx) println("x[$i] = ${x[i]}")
     }
 }

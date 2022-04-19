@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 internal object ShakerSort_06_05 {
     // 배열의 요소 a[idx1]과 a[idx2]를 교환
@@ -36,17 +35,16 @@ internal object ShakerSort_06_05 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("양방향 버블정렬(셰이커정렬)")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         shakerSort(x, nx) // 배열 x를 양방향 버블정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 0 until nx) println("x[" + i + "]＝" + x[i])
+        for (i in 0 until nx) println("x[$i]＝${x[i]}")
     }
 }

@@ -1,7 +1,6 @@
 package chap06.answer
 
 import kotlin.jvm.JvmStatic
-import java.util.*
 
 internal object HeapSortEx_06_17 {
     // 배열의 요소 a[idx1]과 a[idx2]를 교환
@@ -31,24 +30,22 @@ internal object HeapSortEx_06_17 {
         while (1.let { i = i shr it; i } > 0) height++
         i = 0
         var w = 1
-        Loop@{
-            for (level in 0 until height) {
-                dispSpace(pow2(height - level) - 3)
-                for (k in 0 until w) {
-                    System.out.printf("%02d", a[i++])
-                    if (i >= n) break@Loop
-                    if (k < w - 1) dispSpace(pow2(height - level + 1) - 2)
-                }
-                println()
-                dispSpace(pow2(height - level) - 4)
-                for (k in 0 until w) {
-                    if (2 * k + i < n) print(" ／ ")
-                    if (2 * k + i + 1 < n) print(" ＼ ")
-                    if (k < w - 1) dispSpace(pow2(height - level + 1) - 4)
-                }
-                println()
-                w *= 2
+        Loop@ for (level in 0 until height) {
+            dispSpace(pow2(height - level) - 3)
+            for (k in 0 until w) {
+                System.out.printf("%02d", a[i++])
+                if (i >= n) break@Loop
+                if (k < w - 1) dispSpace(pow2(height - level + 1) - 2)
             }
+            println()
+            dispSpace(pow2(height - level) - 4)
+            for (k in 0 until w) {
+                if (2 * k + i < n) print(" ／ ")
+                if (2 * k + i + 1 < n) print(" ＼ ")
+                if (k < w - 1) dispSpace(pow2(height - level + 1) - 4)
+            }
+            println()
+            w *= 2
         }
         println()
         println()
@@ -86,17 +83,17 @@ internal object HeapSortEx_06_17 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val stdIn = Scanner(System.`in`)
         println("힙정렬 ")
         print("요솟수：")
-        val nx = stdIn.nextInt()
+        val nx = readLine()!!.toInt()
         val x = IntArray(nx)
         for (i in 0 until nx) {
             print("x[$i]：")
-            x[i] = stdIn.nextInt()
+            x[i] = readLine()!!.toInt()
         }
         heapSort(x, nx) // 배열 x를 힙정렬
         println("오름차순으로 정렬했습니다.")
-        for (i in 0 until nx) println("x[" + i + "]＝" + x[i])
+        for (i in 0 until nx)
+            println("x[$i]＝${x[i]}")
     }
 }

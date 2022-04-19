@@ -81,7 +81,7 @@ class IntStack(  // 스택 용량
     // 스택 안의 모든 데이터를 바닥 → 꼭대기 순서로 출력
     fun dump() {
         if (ptr <= 0) println("스택이 비어 있습니다.") else {
-            for (i in 0 until ptr) print(stk[i].toString() + " ")
+            for (i in 0 until ptr) print("${stk[i]} ")
             println()
         }
     }
