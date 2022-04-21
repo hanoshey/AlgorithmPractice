@@ -10,7 +10,7 @@ internal object KMPmatch {
             if (pat[pt] == pat[pp])
                 skip[++pt] = ++pp
             else if (pp == 0)
-                skip[++pt] = pp
+                skip[++pt] = 0
             else
                 pp = skip[pp]
         }
@@ -21,11 +21,10 @@ internal object KMPmatch {
             if (txt[pt] == pat[pp]) {
                 pt++
                 pp++
-            } else if (pp == 0) {
+            } else if (pp == 0)
                 pt++
-            } else {
+             else
                 pp = skip[pp]
-            }
         }
         if (pp == pat.length)
             return pt - pp
