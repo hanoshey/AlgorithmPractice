@@ -59,8 +59,7 @@ internal object QuickSortEx4B_06_15 {
                     if (pl <= pr) swap(a, pl++, pr--)
                 } while (pl <= pr)
                 if (pr - left < right - pl) {
-                    var temp: Int
-                    temp = left
+                    var temp= left
                     left = pl
                     pl = temp
                     temp = right

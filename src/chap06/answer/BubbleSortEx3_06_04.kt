@@ -17,15 +17,17 @@ internal object BubbleSortEx3_06_04 {
         var i = 0
         var k = 0 // a[k]보다 앞은 이미 정렬됨
         while (k < n - 1) {
-            System.out.printf("패스%d：\n", i++)
+            print("패스%d：\n".format(i++))
             var last = n - 1 // 가장 마지막에 교환한 위치
             for (j in n - 1 downTo k + 1) {
-                for (m in 0 until n - 1) System.out.printf(
-                    "%3d %c",
-                    a[m],
-                    if (m != j - 1) ' ' else if (a[j - 1] > a[j]) '+' else '-'
-                )
-                System.out.printf("%3d\n", a[n - 1])
+                for (m in 0 until n - 1)
+                    print(
+                        "%3d %c".format(
+                            a[m],
+                            if (m != j - 1) ' ' else if (a[j - 1] > a[j]) '+' else '-'
+                        )
+                    )
+                print("%3d\n".format(a[n - 1]))
                 ccnt++
                 if (a[j - 1] > a[j]) {
                     swap(a, j - 1, j)

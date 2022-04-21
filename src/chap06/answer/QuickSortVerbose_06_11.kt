@@ -18,18 +18,18 @@ internal object QuickSortVerbose_06_11 {
         val rstack = IntStack(right - left + 1)
         lstack.push(left)
         rstack.push(right)
-        System.out.printf("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n", left, right)
+        print("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n".format(left, right))
         print("Lstack:")
         lstack.dump()
         print("Rstack:")
         rstack.dump()
-        while (lstack.isEmpty != true) {
+        while (!lstack.isEmpty) {
             left = lstack.pop()
             var pl = left // 왼쪽 커서
             right = rstack.pop()
             var pr = right // 오른쪽 커서
             val x = a[(left + right) / 2] // 피벗은 중앙의 요소
-            System.out.printf("스택에서 분할하는 문제를 꺼냈습니다.a[%d]~a[%d]를 분할합니다.\n", left, right)
+            print("스택에서 분할하는 문제를 꺼냈습니다.a[%d]~a[%d]를 분할합니다.\n".format(left, right))
             do {
                 while (a[pl] < x) pl++
                 while (a[pr] > x) pr--
@@ -38,7 +38,7 @@ internal object QuickSortVerbose_06_11 {
             if (left < pr) {
                 lstack.push(left) // 머리쪽 그룹의 범위
                 rstack.push(pr) // (index)를 푸시
-                System.out.printf("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n", left, pr)
+                print("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n".format(left, pr))
                 print("Lstack:")
                 lstack.dump()
                 print("Rstack:")
@@ -47,7 +47,7 @@ internal object QuickSortVerbose_06_11 {
             if (pl < right) {
                 lstack.push(pl) // 꼬리쪽그룹의 범위
                 rstack.push(right) // (index)를 푸시
-                System.out.printf("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n", pl, right)
+                print("a[%d]~a[%d]를 분할하는 문제를 스택에 푸시합니다.\n".format(pl, right))
                 print("Lstack:")
                 lstack.dump()
                 print("Rstack:")
