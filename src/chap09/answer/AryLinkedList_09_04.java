@@ -3,7 +3,7 @@ import java.util.Comparator;
 // 연결 리스트 클래스  (배열 커서 버전)
 // 해당 정답 메서드는 소스 코드의 맨 아래쪽에 있습니다.
 
-public class AryLinkedListT_09_04<E> {
+class AryLinkedListT_09_04<E> {
 	// 노드
 	class Node<E> {
 		private E data; // 데이터
