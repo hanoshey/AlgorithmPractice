@@ -76,7 +76,7 @@ internal object ArrayLinkedListTester {
 
         //--- 데이터를 읽어 들임 ---//
         fun scanData(guide: String, sw: Int) {
-            println(guide + "할 데이터를 입력하세요.")
+            println("${guide}할 데이터를 입력하세요.")
             if (sw and NO == NO) {
                 print("번호: ")
                 no = stdIn.nextInt()
