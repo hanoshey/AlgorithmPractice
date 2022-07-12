@@ -1,10 +1,9 @@
-package chap10.answer// 연습9-3
+package chap10.answer.a3;// 연습9-3
 // 이진검색트리 클래스 BinTree<K,V>의 사용 예
 // 주의 : 
 // 이 프로그램의 키(key)는 【정수의 내림차순】입니다.
 // 가장 작은 키값은 , 회원번호의 【최댓값】이고, 
 // 가장 큰 키값은 , 회원번호의 【최솟값】입니다.
-
 import java.util.Scanner;
 import java.util.Comparator;
 

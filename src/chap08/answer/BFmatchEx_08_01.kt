@@ -14,13 +14,13 @@ internal object BFmatchEx_08_01 {
                 print("%2d  ".format(pt - pp))
                 k = pt - pp
             }
-            for (i in 0 until txt.length) print(txt[i].toString() + " ")
+            for (element in txt) print("$element ")
             println()
             for (i in 0 until pt * 2 + 4) print(" ")
             print(if (txt[pt] == pat[pp]) '+' else '|')
             println()
             for (i in 0 until (pt - pp) * 2 + 4) print(" ")
-            for (i in 0 until pat.length) print(pat[i].toString() + " ")
+            for (element in pat) print("$element ")
             println()
             println()
             count++

@@ -37,7 +37,7 @@ internal object BMmatchEx_08_04 {
             print(if (txt[pt] == pat[pp]) '+' else '|')
             println()
             for (i in 0 until (pt - pp) * 2 + 4) print(" ")
-            for (i in 0 until pat.length) print(pat[i].toString() + " ")
+            for (element in pat) print("$element ")
             println()
             println()
             count++
@@ -55,7 +55,7 @@ internal object BMmatchEx_08_04 {
                 print(if (txt[pt] == pat[pp]) '+' else '|')
                 println()
                 for (i in 0 until (pt - pp) * 2 + 4) print(" ")
-                for (i in 0 until pat.length) print("${pat[i]} ")
+                for (element in pat) print("$element ")
                 println()
                 println()
                 count++
